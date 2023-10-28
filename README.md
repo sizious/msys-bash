@@ -5,17 +5,19 @@ for **MinGW/MSYS**. This package is intended to be used on **MSYS** only, and
 was created to replace the bugged **3.1.23-1** which is the only one
 officially provided in the **MinGW/MSYS** repository.
 
-Indeed, while trying to create a here document, you may have the following issue
-on some Windows 10/11 editions (tested on Windows 10 Home 22H2):
+Indeed, while trying to create a [heredoc](https://en.wikipedia.org/wiki/Here_document),
+you may have the following issue on some Windows 10/11 editions (tested on
+Windows 10 Home 22H2):
 
 ```
 bash: cannot create temp file for here document: Permission denied
 ```
 
-This issue was identified in the past by the Cygwin team but for some reason,
-the fix was removed by the MinGW team. This patch restore this.
+This issue was identified in the past by the [Cygwin](https://www.cygwin.com/)
+team but for some reason, the fix was removed by the
+[MinGW](https://osdn.net/projects/mingw/) team. This patch restore this.
 
-Please note, the temporary files created by the here document creation are not
+*Note:* the temporary files created by the heredoc creation process are not
 removed from the `%TEMP%` directory, due to a `Permission denied` (`Errno 13`)
 issue - this could be explained as in *nix system, it's allowed to unlink a file
 even if you have opened it, which isn't the case on Windows.
