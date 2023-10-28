@@ -1,0 +1,41 @@
+--- old/bash-3.1/redir.c	2023-10-28 17:25:05 +0000
++++ new/bash-3.1/redir.c	2023-10-28 17:07:28 +0000
+@@ -418,20 +418,32 @@
+   if (unlink (filename) < 0)
+     {
+       r = errno;
+-#if defined (__CYGWIN__) && !defined(__MSYS__) /* NOT USING in MSYS */
++
++#if defined (__CYGWIN__) || defined (__MSYS__)
+       /* Under CygWin 1.1.0, the unlink will fail if the file is
+-	 open. This hack will allow the previous action of silently
+-	 ignoring the error, but will still leave the file there. This
+-	 needs some kind of magic. */
++         open. This hack will allow the previous action of silently
++         ignoring the error, but will still leave the file there. This
++         needs some kind of magic. */
++
++      /* Correction: On Windows, it's impossible to unlink/delete a file
++         if the file is in use, as allowed in *nix environments.
++         After trying a lot of stuff, we are unable to delete
++         "/tmp/sh-thd-??????????" files created on the fly...
++         but this isn't so important ... */
++
+       if (r == EACCES)
+-	return (fd2);
+-#endif /* __CYGWIN__ && !__MSYS__ */ /* not used for __MSYS__ */
++      {
++        goto short_circuit;
++      }
++#endif /* __CYGWIN__ || __MSYS__ */
++
+       close (fd2);
+       free (filename);
+       errno = r;
+       return (-1);
+     }
+ 
++short_circuit:
+   free (filename);
+   return (fd2);
+ }
