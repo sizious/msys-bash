@@ -14,14 +14,14 @@ as the 3.1 distribution does not include any translation files.
 Runtime requirements:
   libregex-1.20090805-2-msys-1.0.13-dll-1
   libtermcap-0.20050421_1-2-msys-1.0.13-dll-0
-  msysCORE-1.0.18-1-msys-1.0.18-bin
+  msysCORE-1.0.19-1-msys-1.0.19-bin
   termcap-0.20050421_1-2-msys-1.0.13-bin
 
 Build requirements (these, or newer)
   MSYS toolchain
     binutils-2.19.51-3-msys-1.0.13-bin
     gcc-3.4.4-3-msys-1.0.13-bin
-    msysCORE-1.0.18-1-msys-1.0.18-dev
+    msysCORE-1.0.19-1-msys-1.0.19-dev
     w32api-3.14-3-msys-1.0.12-dev
 
   Devel Tools and Dependent Libraries
@@ -53,9 +53,9 @@ Build requirements (these, or newer)
     libxml2-2.7.6-1-msys-1.0.13-dll-2.tar.lzma
     m4-1.4.16-2-msys-1.0.17-bin.tar.lzma
     make-3.81-3-msys-1.0.13-bin
-    msysCORE-1.0.18-1-msys-1.0.18-doc
-    msysCORE-1.0.18-1-msys-1.0.18-ext
-    msysCORE-1.0.18-1-msys-1.0.18-lic
+    msysCORE-1.0.19-1-msys-1.0.19-doc
+    msysCORE-1.0.19-1-msys-1.0.19-ext
+    msysCORE-1.0.19-1-msys-1.0.19-lic
     patch-2.6.1-1-msys-1.0.13-bin
     perl-5.8.8-1-msys-1.0.17-bin
     sed-4.2.1-2-msys-1.0.13-bin
@@ -79,14 +79,14 @@ Language:
 ========================================================================
 
 Build instructions:
-  unpack bash-3.1.23-4-msys-1.0.18-src.tar.lzma
+  unpack bash-3.1.23-2-msys-1.0.19-src.tar.xz
   ./msys-build-bash bash-3.1.tar.gz
 
 This will create:
-  bash-3.1.23-1-msys-1.0.18-src.tar.xz
-  bash-3.1.23-1-msys-1.0.18-bin.tar.xz
-  bash-3.1.23-1-msys-1.0.18-doc.tar.xz
-  bash-3.1.23-1-msys-1.0.18-lic.tar.xz
+  bash-3.1.23-2-msys-1.0.19-src.tar.xz
+  bash-3.1.23-2-msys-1.0.19-bin.tar.xz
+  bash-3.1.23-2-msys-1.0.19-doc.tar.xz
+  bash-3.1.23-2-msys-1.0.19-lic.tar.xz
 
 ========================================================================
 
