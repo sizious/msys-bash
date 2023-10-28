@@ -17,7 +17,7 @@ This issue was identified in the past by the [Cygwin](https://www.cygwin.com/)
 team but for some reason, the fix was removed by the
 [MinGW](https://osdn.net/projects/mingw/) team. This patch restore this.
 
-**Note:** the temporary files created by the heredoc creation process are not
+**Note:** Temporary files created by the heredoc creation process are not
 removed from the `%TEMP%` directory, due to a `Permission denied` (`Errno 13`)
 issue - this could be explained as in *nix system, it's allowed to unlink a file
 even if you have opened it, which isn't the case on Windows.
@@ -31,5 +31,5 @@ even if you have opened it, which isn't the case on Windows.
 ## Compile
 
 If you want to recompile this source, you will need to have a working 
-[MSYS Toolchain](http://www.mingw.org/wiki/HOWTO_Create_an_MSYS_Build_Environment).
+[MSYS Toolchain](https://web.archive.org/web/20160317203900/http://mingw.org/wiki/HOWTO_Create_an_MSYS_Build_Environment).
 Then, follow the instructions in the `src/msys-bash.RELEASE_NOTES` file.
