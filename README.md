@@ -17,7 +17,7 @@ This issue was identified in the past by the [Cygwin](https://www.cygwin.com/)
 team but for some reason, the fix was removed by the
 [MinGW](https://osdn.net/projects/mingw/) team. This patch restore this.
 
-*Note:* the temporary files created by the heredoc creation process are not
+**Note:** the temporary files created by the heredoc creation process are not
 removed from the `%TEMP%` directory, due to a `Permission denied` (`Errno 13`)
 issue - this could be explained as in *nix system, it's allowed to unlink a file
 even if you have opened it, which isn't the case on Windows.
